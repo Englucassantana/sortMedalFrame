@@ -1,0 +1,4 @@
+Alemanha 6 3 0
+Noruega 5 3 4
+Italia 4 2 1
+EUA 3 1 2

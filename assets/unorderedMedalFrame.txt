@@ -1,0 +1,7 @@
+Noruega 5 3 4
+EUA 3 1 2
+Alemanha 6 3 0
+Italia 4 2 1
+China 10 2 3
+Brasil 8 7 2
+Estonia 10 2 2
