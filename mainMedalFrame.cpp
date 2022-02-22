@@ -1,15 +1,15 @@
 #include <iostream>
 #include <string>
-#include "./Classes/CountryData.hpp"
-#include "./Classes/MedalFrame.hpp"
+#include "./classes/CountryData.hpp"
+#include "./classes/MedalTable.hpp"
 
 using namespace std;
 
 int main()
 {
   string path = "./assets/unorderedMedalFrame.txt";
-  MedalFrame currentMedalFrame;
+  MedalTable currentMedalTable;
 
-  currentMedalFrame.setPathFile(path);
-  currentMedalFrame.showFile();
+  currentMedalTable.setPathFile(path);
+  currentMedalTable.showFile();
 }

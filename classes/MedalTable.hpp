@@ -1,5 +1,5 @@
-#ifndef MEDALFRAME_HPP
-#define MEDALFRAME_HPP
+#ifndef MEDALTABLE_HPP
+#define MEDALTABLE_HPP
 
 #include <string>
 #include <iostream>
@@ -10,7 +10,7 @@
 
 using namespace std;
 
-class MedalFrame
+class MedalTable
 {
 private:
   string path = "";
@@ -20,9 +20,9 @@ private:
   void sortMedalFrameArray();
 
 public:
-  MedalFrame();
-  MedalFrame(string path);
-  ~MedalFrame();
+  MedalTable();
+  MedalTable(string path);
+  ~MedalTable();
   void setPathFile(string path);
   void showFile();
   void showOrderedMedalFrame();

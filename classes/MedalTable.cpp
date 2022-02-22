@@ -1,29 +1,29 @@
-#include "MedalFrame.hpp"
+#include "MedalTable.hpp"
 
 using namespace std;
 
-MedalFrame::MedalFrame()
+MedalTable::MedalTable()
 {
   cout << "Objeto criado use o metodo setPathFile para entrar com o caminho do arquivo" << endl;
 }
-MedalFrame::MedalFrame(string path)
+MedalTable::MedalTable(string path)
 {
   this->path = path;
 }
-MedalFrame::~MedalFrame()
+MedalTable::~MedalTable()
 {
 }
 
-void MedalFrame::showFile()
+void MedalTable::showFile()
 {
   buildingMedalFrameArray();
   sortMedalFrameArray();
 }
-void MedalFrame::setPathFile(string path)
+void MedalTable::setPathFile(string path)
 {
   this->path = path;
 }
-int MedalFrame::getAmountLineFile()
+int MedalTable::getAmountLineFile()
 {
   int lineAmount = 0;
   ifstream medalFrameFile(this->path);
@@ -35,7 +35,7 @@ int MedalFrame::getAmountLineFile()
   }
   return 0;
 }
-void MedalFrame::buildingMedalFrameArray()
+void MedalTable::buildingMedalFrameArray()
 {
   ifstream medalFrameFile(this->path);
   
@@ -101,7 +101,7 @@ void MedalFrame::buildingMedalFrameArray()
     cout << "Arquivo não pôde ser aberto" << endl;
   }
 }
-void MedalFrame::sortMedalFrameArray()
+void MedalTable::sortMedalFrameArray()
 {
 
   cout << "Ordenando o quadro de medalhas... " << endl;
