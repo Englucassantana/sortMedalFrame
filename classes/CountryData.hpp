@@ -19,7 +19,6 @@ private:
 public:
   CountryData();
   CountryData(const CountryData &countryData);
-  ~CountryData();
   string getCountryName()
   {
     return this->countryName;

@@ -10,6 +10,4 @@ CountryData::CountryData(const CountryData &countryData)
   this->silverMedalAmount = countryData.silverMedalAmount;
   this->bronzeMedalAmount = countryData.bronzeMedalAmount;
 }
-CountryData::~CountryData()
-{
-}
+

@@ -11,5 +11,5 @@ int main()
   MedalTable currentMedalTable;
 
   currentMedalTable.setPathFile(path);
-  currentMedalTable.showFile();
+  currentMedalTable.show();
 }

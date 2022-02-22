@@ -15,17 +15,14 @@ class MedalTable
 private:
   string path = "";
   vector<CountryData> countriesData;
-  int getAmountLineFile();
-  void buildingMedalFrameArray();
-  void sortMedalFrameArray();
+  void buildingMedalTableArray();
+  void sortMedalTableArray();
 
 public:
   MedalTable();
   MedalTable(string path);
-  ~MedalTable();
   void setPathFile(string path);
-  void showFile();
-  void showOrderedMedalFrame();
+  void show();
 };
 
 #endif
