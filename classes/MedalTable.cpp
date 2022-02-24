@@ -22,65 +22,40 @@ void MedalTable::setPathFile(string path)
 }
 void MedalTable::buildingMedalTableArray()
 {
-  ifstream medalFrameFile(this->path);
-  
-  char c;
+  ifstream medalTableFile(this->path);
 
   cout << "Carregando tabela........" << endl;
-  
-  if (medalFrameFile.is_open())
+  if (medalTableFile.is_open())
   {
-    while (medalFrameFile.get(c))
-    {
-      string countryName;
-      string medalAmount;
+    string tuple;
+    
+    while (getline(medalTableFile,tuple))
+    {    
       CountryData countryData;
 
-      do
-      {
-        countryName += c;
-        medalFrameFile.get(c);
-      } while (c != ' ');
-      countryData.setCountryName(countryName);
-      medalFrameFile.get(c);
-
-      do
-      {
-        medalAmount += c;
-        medalFrameFile.get(c);
-      } while (c != ' ');
-      countryData.setGoldMedalAmount(stoi(medalAmount));
-      medalAmount = "";
-      medalFrameFile.get(c);
-
-      do
-      {
-        medalAmount += c;
-        medalFrameFile.get(c);
-      } while (c != ' ');
-      countryData.setSilverMedalAmount(stoi(medalAmount));
-      medalAmount = "";
-      medalFrameFile.get(c);
-
-      do
-      {
-        medalAmount += c;
-      } while (c != '\n' && medalFrameFile.get(c));
-      countryData.setBronzeMedalAmount(stoi(medalAmount));
-      medalAmount = "";
-
-      countriesData.push_back(countryData);
+      countryData.setCountryName(tuple.substr(0,tuple.find(' ')));
+      tuple = tuple.erase(0,tuple.find(' ') + 1);
+      countryData.setGoldMedalAmount(stoi(tuple.substr(0,tuple.find(' '))));
+      tuple = tuple.erase(0,tuple.find(' ') + 1);
+      countryData.setSilverMedalAmount(stoi(tuple.substr(0,tuple.find(' '))));
+      tuple = tuple.erase(0,tuple.find(' ') + 1);
+      countryData.setBronzeMedalAmount(stoi(tuple));
 
       cout
-        << "País: " << countryData.getCountryName()
-        << " Ouro: " << countryData.getGoldMedalAmount()
-        << " Prata: " << countryData.getSilverMedalAmount()
-        << " Bronze: " << countryData.getBronzeMedalAmount()
-        << endl;
-    }
+      << "País: " << countryData.getCountryName()
+      << " Ouro: " << countryData.getGoldMedalAmount()
+      << " Prata: " << countryData.getSilverMedalAmount()
+      << " Bronze: " << countryData.getBronzeMedalAmount()
+      << endl;
 
-    medalFrameFile.close();
+      countriesData.push_back(countryData);    
+    }
+    
+    medalTableFile.close();
+    
   }
+  
+
   else
   {
     cout << "Arquivo não pôde ser aberto" << endl;
